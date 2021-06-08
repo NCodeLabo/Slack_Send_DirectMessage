@@ -5,6 +5,8 @@
  Text to be sent is taken from Google Docs.
 */
 
+const TOKEN = "xoxp-123456789012-1234567890123-1234567890123-1234567890123-12345678901234567890123456789012"
+
 function main() {
   const spreadSheet = SpreadsheetApp.getActiveSpreadsheet(); 
   const sheet       = spreadSheet.getActiveSheet();
