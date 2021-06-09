@@ -74,7 +74,7 @@ function main() {
                     sendMailList[i][8] = "送信済";//行の一番右のセルに送信済みをつける
                 } catch (e) {
                     missCount = missCount + 1;
-                    const errorMsg = Browser.msgBox(usersName + " へのDM送信失敗しました。エラー文を確認して対応をお願いします。\n【エラー文】" + e);
+                    //const errorMsg = Browser.msgBox(usersName + " へのDM送信失敗しました。エラー文を確認して対応をお願いします。\n【エラー文】" + e);
                     console.log(usersName + " へのDM送信失敗しました。\n【エラー文】" + e);
                     sendMailList[i][8] = "送信失敗";
                 }
@@ -84,8 +84,8 @@ function main() {
         }
     }
     sheet.getRange(1, 1, sendMailList.length, 9).setValues(sendMailList);
-    const MsgBox = Browser.msgBox("送信処理が完了しました。\n\成功" + successCount + "件\n\失敗" + missCount + "件です");
-    console.log("successCount = " + successCount + "\n\missCount = " + missCount);
+    //const MsgBox = Browser.msgBox("送信処理が完了しました。\n\成功" + successCount + "件\n\失敗" + missCount + "件です");
+    console.log("送信処理が完了しました。\n\成功" + successCount + "件\n\失敗" + missCount + "件です");
 }
 
 /*
@@ -138,7 +138,7 @@ function getUserName(id) {
         name = "<@" + res.user.name + ">";
     } catch (e) {
         console.log("getUserNameでエラーが発生しました\n\【id】" + id + "\n【name】" + name + "\n【エラー文】" + e);
-        const errorMsg = Browser.msgBox("getUserNameでエラーが発生しました\n\【id】" + id + "\n【name】" + name + "\n【エラー文】" + e);
+        //const errorMsg = Browser.msgBox("getUserNameでエラーが発生しました\n\【id】" + id + "\n【name】" + name + "\n【エラー文】" + e);
     }
     return name;
 }
@@ -169,7 +169,7 @@ function lookupByEmail(email) {
         id = res.user.id
     } catch (e) {
         console.log("lookupByEmailでエラーが発生しました\n\【id】" + id + "\n【email】" + email + "\n【エラー文】" + e);
-        const errorMsg = Browser.msgBox("lookupByEmailでエラーが発生しました\n\【id】" + id + "\n【email】" + email + "\n【エラー文】" + e);
+        //const errorMsg = Browser.msgBox("lookupByEmailでエラーが発生しました\n\【id】" + id + "\n【email】" + email + "\n【エラー文】" + e);
     }
     return id;
 }
@@ -199,7 +199,7 @@ function conversationsOpen(users) {
         id = res.channel.id;
     } catch (e) {
         console.log("conversationsOpenでエラーが発生しました\n\【id】" + id + "\n【users】" + users + "\n【エラー文】" + e);
-        const errorMsg = Browser.msgBox("conversationsOpenでエラーが発生しました\n\【id】" + id + "\n【users】" + users + "\n【エラー文】" + e);
+        //const errorMsg = Browser.msgBox("conversationsOpenでエラーが発生しました\n\【id】" + id + "\n【users】" + users + "\n【エラー文】" + e);
     }
     return id;
 }
